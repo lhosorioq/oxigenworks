@@ -1,0 +1,43 @@
+<header id="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-8 header-top-left no-padding">
+          <app-socialmedia></app-socialmedia>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-4 header-top-right no-padding">
+          <!-- <a href="tel:+15614761343">
+            <span class="text">+1 (561) 476-1343</span>
+          </a> -->
+          <form (submit)="$event.preventDefault()">
+            <button type="submit" class="btn" *ngFor="let lang of langs" (click)="agregar(lang)" > {{ lang }} </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container main-menu">
+    <div class="row align-items-center justify-content-between d-flex">
+      <div id="logo">
+        <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a routerLink="home" routerLinkActive="active" >{{ 'home' | translate }}</a></li>
+          <li><a routerLink="about" routerLinkActive="active">{{ 'aboutus' | translate }}</a></li>
+          <li><a href="#">{{ 'selectdate' | translate }}</a></li>
+          <li class="menu-has-children"><a href="">{{ 'services' | translate }}</a>
+            <ul>
+              <li><a href="#">Comprehensive  Wellness Physical Exam</a></li>
+              <li><a href="#">IV Vitamin Infusions</a></li>
+              <li><a href="#">IM Booster Injections</a></li>
+              <li><a href="#">Hormone Replacement</a></li>
+              <li><a href="#">Ozone Therapy</a></li>
+            </ul>
+          </li>
+          <li><a href="#">{{ 'contact' | translate }}</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </div>
+</header>
